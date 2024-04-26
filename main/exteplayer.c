@@ -539,7 +539,7 @@ static int ParseParams(int argc,char* argv[], PlayFiles_t *playbackFiles, int *p
                 playbackFiles->szSecondFile = malloc(IPTV_MAX_FILE_PATH);
                 playbackFiles->szSecondFile[0] = '\0';
                 strncpy(playbackFiles->szSecondFile, optarg, IPTV_MAX_FILE_PATH-1);
-                playbackFiles->szSecondFile[IPTV_MAX_FILE_PATH] = '\0';
+                playbackFiles->szSecondFile[IPTV_MAX_FILE_PATH-1] = '\0';
                 map_inter_file_path(playbackFiles->szSecondFile);
             }
             break;
@@ -621,7 +621,7 @@ static int ParseParams(int argc,char* argv[], PlayFiles_t *playbackFiles, int *p
                 playbackFiles->szFirstMoovAtomFile = malloc(IPTV_MAX_FILE_PATH);
                 playbackFiles->szFirstMoovAtomFile[0] = '\0';
                 strncpy(playbackFiles->szFirstMoovAtomFile, optarg, IPTV_MAX_FILE_PATH-1);
-                playbackFiles->szFirstMoovAtomFile[IPTV_MAX_FILE_PATH] = '\0';
+                playbackFiles->szFirstMoovAtomFile[IPTV_MAX_FILE_PATH-1] = '\0';
                 map_inter_file_path(playbackFiles->szFirstMoovAtomFile);
             }
             break;
@@ -651,7 +651,7 @@ static int ParseParams(int argc,char* argv[], PlayFiles_t *playbackFiles, int *p
             strcpy(playbackFiles->szFirstFile, "file://");
         }
         strcat(playbackFiles->szFirstFile, argv[optind]);
-        playbackFiles->szFirstFile[IPTV_MAX_FILE_PATH] = '\0';
+        playbackFiles->szFirstFile[IPTV_MAX_FILE_PATH-1] = '\0';
         map_inter_file_path(playbackFiles->szFirstFile);
         printf("file: [%s]\n", playbackFiles->szFirstFile);
         ++optind;
