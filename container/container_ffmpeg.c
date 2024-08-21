@@ -66,7 +66,7 @@
 /* Makros/Constants              */
 /* ***************************** */
 
-#define HAVE_CH_LAYOUT (LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(57, 28, 100))
+#define HAVE_CH_LAYOUT (LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(59, 0, 100))
 
 /* Some STB with old kernels have problem with default 
  * read/write functions in ffmpeg which use open/read
